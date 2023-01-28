@@ -27,15 +27,18 @@ def twitterapi():
     return api
 
 def formMessage(_list):
-    message = "Trending accounts on CT: "
+    if bool(_list):
+        message = "Trending accounts on CT: "
 
-    for key in _list:
-        try:
-            if key not in accountList:
+        for key in _list:
+            try:
+                if key not in accountList:
+                    message = message + "\n" + key #vaihda tähän at merkki ennen keytä
+            except:
                 message = message + "\n" + key #vaihda tähän at merkki ennen keytä
-        except:
-            message = message + "\n" + key #vaihda tähän at merkki ennen keytä
-    message = message + "\n" + telegramhandler.getSponsorMessage()
+        message = message + "\n" + "\n" + telegramhandler.getSponsorMessage()
+    else:
+        message = ""
 
     accountList = []
     for key in _list:
@@ -51,12 +54,18 @@ while True:
     print("3")
     message = formMessage(trendingAccounts)
     print("4")
-    response = api.create_tweet(text=message)
+    if message != "":
+        try:
+            response = api.create_tweet(text=message)
+        except:
+            print("post unsuccesful")
+    else:
+        print("no new accounts to post")
     print("5")
     print(response)
 
 
 
-    time.sleep(600)
+    time.sleep(60)
     print("6")
 
