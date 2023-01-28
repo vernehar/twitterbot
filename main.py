@@ -5,11 +5,7 @@ from tweepy import OAuthHandler
 from tweepy import API
 import telegramhandler
 
-accountList = []
-
 def twitterapi():
-
-    #tg key 5886078409:AAH5FFuGlYWsU0Rf_DTtDFCHt2rdMowbzAg
 
     print("Twitter api")
 
@@ -44,6 +40,8 @@ def formMessage(_list):
 
     return message
 
+accountList = []
+print(accountList)
 while True:
     print("1")
     api = twitterapi()
