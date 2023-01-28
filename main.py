@@ -45,13 +45,19 @@ def formMessage(_list):
     return message
 
 while True:
+    print("1")
     api = twitterapi()
+    print("2")
     trendingAccounts = databasecontrol.trendingWithinTimePeriod(48)
+    print("3")
     message = formMessage(trendingAccounts)
+    print("4")
     response = api.create_tweet(text=message)
+    print("5")
     print(response)
 
 
 
-    time.sleep(3600)
+    time.sleep(600)
+    print("6")
 
