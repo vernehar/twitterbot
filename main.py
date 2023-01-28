@@ -5,6 +5,8 @@ from tweepy import OAuthHandler
 from tweepy import API
 import telegramhandler
 
+accountList = []
+
 def twitterapi():
 
     #tg key 5886078409:AAH5FFuGlYWsU0Rf_DTtDFCHt2rdMowbzAg
