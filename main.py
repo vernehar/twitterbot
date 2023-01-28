@@ -30,7 +30,10 @@ def formMessage(_list):
     message = "Trending accounts on CT: "
 
     for key in _list:
-        if key not in accountList:
+        try:
+            if key not in accountList:
+                message = message + "\n" + key #vaihda tähän at merkki ennen keytä
+        except:
             message = message + "\n" + key #vaihda tähän at merkki ennen keytä
     message = message + "\n" + telegramhandler.getSponsorMessage()
 
@@ -40,8 +43,6 @@ def formMessage(_list):
 
     return message
 
-accountList = []
-print(accountList)
 while True:
     print("1")
     api = twitterapi()
