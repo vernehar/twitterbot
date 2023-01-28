@@ -26,9 +26,9 @@ def formMessage(_list):
         for key in _list:
             try:
                 if key not in accountList:
-                    message = message + "\n" + key #vaihda tähän at merkki ennen keytä
+                    message = message + "\n" +"@"+key 
             except:
-                message = message + "\n" + key #vaihda tähän at merkki ennen keytä
+                message = message + "\n" + +"@"+key 
         message = message + "\n" + "\n" + telegramhandler.getSponsorMessage()
     else:
         message = ""
@@ -56,6 +56,6 @@ while True:
         print("no new accounts to post")
     print("5")
  
-    time.sleep(60)
+    time.sleep(14400)
     print("6")
 
