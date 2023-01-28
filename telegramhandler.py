@@ -1,11 +1,11 @@
 from telegram.ext import Updater
 from telegram.update import Update
+import os
 
-creds = "5886078409:AAH5FFuGlYWsU0Rf_DTtDFCHt2rdMowbzAg"
 sponsorMessages = []
 
 #api key to tg
-updater = Updater(token=creds, use_context=True)
+updater = Updater(token=os.environ['TELEGRAM_CRED'], use_context=True)
 job_queue = updater.job_queue
 
 dispatcher = updater.dispatcher
