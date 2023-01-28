@@ -62,10 +62,7 @@ while True:
     else:
         print("no new accounts to post")
     print("5")
-    print(response)
-
-
-
+ 
     time.sleep(60)
     print("6")
 
