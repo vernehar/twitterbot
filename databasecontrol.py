@@ -5,10 +5,10 @@ import calendar
 #open connection to database
 def openConnection():
     connection = psycopg2.connect(
-    host="ec2-54-155-87-214.eu-west-1.compute.amazonaws.com",
-    database="dct9jalm2c5t58",
-    user="ziflmtqozeeleo",
-    password="43389316626b571c3ac5990d3cddd0027aabecaae0e90fe84b922f52905147b5",
+    host="ec2-34-251-115-141.eu-west-1.compute.amazonaws.com",
+    database="dffsuc2s86o960",
+    user="tyymzbzidvowkg",
+    password="1d51ace4d9e9ecf1c77161abfe492c58593a701c243ce5467125f1121cd09ca9",
     sslmode="require")
     
     return connection
