@@ -26,8 +26,10 @@ def formMessage(_list):
         for key in _list:
             try:
                 if key not in accountList:
+                    print("not in")
                     message = message + "\n" +"@"+key 
             except:
+                print("except")
                 message = message + "\n" +"@"+key 
         message = message + "\n" + "\n" + telegramhandler.getSponsorMessage()
     else:
