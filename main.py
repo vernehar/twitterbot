@@ -14,7 +14,8 @@ def twitterapi():
     api = tweepy.Client(consumer_key = os.environ["CONSUMER_KEY"], 
             consumer_secret = os.environ["CONSUMER_SECRET"],
             access_token = os.environ["ACCESS_TOKEN"],
-        access_token_secret = os.environ["ACCESS_SECRET"])
+       access_token_secret = os.environ["ACCESS_SECRET"])
+
     print(api)
     
     return api
@@ -47,11 +48,13 @@ while True:
     print("2")
     trendingAccounts = databasecontrol.trendingWithinTimePeriod(48)
     print("3")
+    print(trendingAccounts)
     message = formMessage(trendingAccounts)
     print("4")
     if message != "":
         try:
             response = api.create_tweet(text=message)
+            print(message)
         except:
             print("post unsuccesful")
     else:

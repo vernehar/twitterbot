@@ -6,6 +6,7 @@ sponsorMessages = []
 
 #api key to tg
 updater = Updater(token=os.environ['TELEGRAM_CRED'], use_context=True)
+
 job_queue = updater.job_queue
 
 dispatcher = updater.dispatcher
