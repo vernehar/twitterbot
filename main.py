@@ -52,11 +52,11 @@ while True:
     message = formMessage(trendingAccounts)
     print("4")
     if message != "":
-        #try:
-        response = api.create_tweet(text=message)
-        print(message)
-        #except:
-            #print("post unsuccesful")
+        try:
+            response = api.create_tweet(text=message)
+            print(message)
+        except Exception as error:
+            print("post unsuccesful: "+ error)
     else:
         print("no new accounts to post")
     print("5")
