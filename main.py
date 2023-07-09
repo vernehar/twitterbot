@@ -55,8 +55,9 @@ while True:
         try:
             response = api.create_tweet(text=message)
             print(message)
-        except Exception as error:
-            print("post unsuccesful: "+ error)
+        except:
+            print("post unsuccesful: ")
+            print(Exception)
     else:
         print("no new accounts to post")
     print("5")
